@@ -162,35 +162,7 @@ const AllPages = () => {
               </li>
             </ul>
           </div>
-          <div className="pages-title">
-            <h2>call</h2>
-          </div>
-          <div className="page-list">
-            <ul>
-              <li>
-                <Link to="/audio-call">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    audio call page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
-              <li>
-                <Link to="/video-call">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    video call page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
-            </ul>
-          </div>
+          
           <div className="pages-title">
             <h2>profile</h2>
           </div>
@@ -218,17 +190,7 @@ const AllPages = () => {
                   <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
                 </Link>
               </li>
-              <li>
-                <Link to="/guide-profile">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    guide profile page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
+              
             </ul>
           </div>
           <div className="pages-title">
@@ -324,86 +286,15 @@ const AllPages = () => {
                   <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
                 </Link>
               </li>
-              <li>
-                <Link to="/user-payment">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    payment page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
             </ul>
           </div>
-          <div className="pages-title">
-            <h2>hotel</h2>
-          </div>
-          <div className="page-list">
-            <ul>
-              <li>
-                <Link to="/book-hotel">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    book hotel page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
-              <li>
-                <Link to="/checkout-hotel">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    checkout hotel page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
-              <li>
-                <Link to="/hotels">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    hotels page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
-              <li>
-                <Link to="/hotel-details">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    hotel details page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
-            </ul>
-          </div>
+
           <div className="pages-title">
             <h2>vacation</h2>
           </div>
           <div className="page-list">
             <ul>
-              <li>
-                <Link to="/vacation-details">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    vacation details page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
+             
               <li>
                 <Link to="/wishlist">
                   <div className="d-flex align-items-center gap-16">
@@ -415,39 +306,7 @@ const AllPages = () => {
                   <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
                 </Link>
               </li>
-              <li>
-                <Link to="/explore">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    explore page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
-              <li>
-                <Link to="/checkout-vacation">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    checkout vacation page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
-              <li>
-                <Link to="/search-result">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    search result page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
+             
               <li>
                 <Link to="/service-location">
                   <div className="d-flex align-items-center gap-16">
@@ -459,39 +318,7 @@ const AllPages = () => {
                   <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
                 </Link>
               </li>
-              <li>
-                <Link to="/ticket-booked">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    booked ticket page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
-              <li>
-                <Link to="/ticket-detail">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    ticket details page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
-              <li>
-                <Link to="/tour-guide">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    tour guide page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
+             
             </ul>
           </div>
           <div className="pages-title">
@@ -521,17 +348,7 @@ const AllPages = () => {
                   <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
                 </Link>
               </li>
-              <li>
-                <Link to="/review">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    review
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
+             
               <li>
                 <Link to="/policy">
                   <div className="d-flex align-items-center gap-16">

@@ -125,9 +125,6 @@ const HeaderOne = () => {
 						</div>
 					</div>
 					<ul>
-						<li>
-							<h2 className="menu-title">menu</h2>
-						</li>
 
 						<li>
 							<Link to="/home" onClick={toggleShow}>

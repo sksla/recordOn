@@ -1,16 +1,18 @@
  
-import HeaderOne from "../../../layouts/headers/HeaderOne";
-import ScrollTop from "../../common/ScrollTop";
-import Onboarding from "./Onboarding"; 
+// import HeaderOne from "../../../layouts/headers/HeaderOne";
+// import ScrollTop from "../../common/ScrollTop";
+// import Onboarding from "./Onboarding"; 
+import Signup from "../../auth/signup/index";
 
 const MainHome = () => {
 	return (
 		<>
-			<HeaderOne />
+			{/* <HeaderOne /> */}
 			<main>
-				<Onboarding />
+				<Signup />
+				{/* <Onboarding /> */}
 			</main>
-			<ScrollTop />
+			{/* <ScrollTop /> */}
 		</>
 	);
 };

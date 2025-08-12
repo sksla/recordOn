@@ -1,52 +1,10 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
  
 
-interface DataType {
-	id: string;
-	title: string;
-	content: string;
-}
-
-const accordion_data: DataType[] = [
-	{
-		id: "One",
-		title: "How do I reset my password?",
-		content:
-			"You can reset your password by clicking on the Forgot Password? link in the login page.",
-	},
-	{
-		id: "Two",
-		title: "I forgot my password, what should I do?",
-		content:
-			"You can reset your password by clicking on the Forgot Password? link in the login page.",
-	},
-	{
-		id: "Three",
-		title: "I forgot my password, what should I do?",
-		content:
-			"You can reset your password by clicking on the Forgot Password? link in the login page.",
-	},
-	{
-		id: "Four",
-		title: "I forgot my password, what should I do?",
-		content:
-			"You can reset your password by clicking on the Forgot Password? link in the login page.",
-	},
-	{
-		id: "Five",
-		title: "I forgot my password, what should I do?",
-		content:
-			"You can reset your password by clicking on the Forgot Password? link in the login page.",
-	},
-];
-
 const Support = () => {
-	const [active, setActive] = useState(0);
-	const handleActive = (id: any) => {
-		setActive(id);
-	};
+
 
 	const navigate = useNavigate();
   const handleBack = () => {
@@ -89,43 +47,7 @@ const Support = () => {
 					</form>
 				</section>
 
-				<section className="faq px-24 py-32">
-					<div className="accordion" id="accordionExample">
-						{accordion_data.map((item, i) => (
-							<div key={i} className="accordion-item">
-								<h2
-									className="accordion-header"
-									onClick={() => handleActive(i)}
-								>
-									<button
-										className={`accordion-button ${
-											active === i ? "show" : "collapsed"
-										}`}
-										type="button"
-										data-bs-toggle="collapse"
-										data-bs-target={`#collapse${item.id}`}
-										aria-expanded={active === i ? true : false}
-										aria-controls={`collapse${item.id}`}
-									>
-										{item.title}
-										<span className="accordion-btn"></span>
-									</button>
-								</h2>
-								<div
-									id={`collapse${item.id}`}
-									className={`accordion-collapse collapse ${
-										active === i ? "show" : ""
-									}`}
-									data-bs-parent="#accordionExample"
-								>
-									<div className="accordion-body">
-										<p>{item.content}</p>
-									</div>
-								</div>
-							</div>
-						))}
-					</div>
-				</section>
+				
 			</main>
 		</>
 	);
