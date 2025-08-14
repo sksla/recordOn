@@ -15,21 +15,12 @@ const Signup = () => {
 
 				<section className="auth signin">
 					<div className="heading">
-						<h2>Create account</h2>
-						<p>Lorem ipsum dolor sit amet</p>
+						<h2>RecordOn :)</h2>
 					</div>
 
 					<div className="form-area auth-form">
 						<form onSubmit={(e) => e.preventDefault()}>
-							<div>
-								<label htmlFor="remail1">Email</label>
-								<input
-									type="email"
-									id="remail1"
-									placeholder="Enter your email address"
-									className="input-field"
-								/>
-							</div>
+							
 							<Link to="/signup-email" className="btn-primary">
 								Continue with Email
 							</Link>
@@ -65,7 +56,7 @@ const Signup = () => {
 						</div>
 
 						<h6>
-							Already have an account? <Link to="/signin">Login</Link>
+							Already have an account? <Link to="/signin-email">Login</Link>
 						</h6>
 					</div>
 				</section>
