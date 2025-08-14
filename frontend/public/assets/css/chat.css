@@ -24,7 +24,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   height: 56px;
 }
 
-.message-main .message-search .input-field{
+.message-main .message-search .input-field {
   padding: 0;
 }
 
@@ -84,7 +84,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 .message .single-chat .trash {
   width: 84px;
   height: 88px;
-  background: #FFF5F5;
+  background: #fff5f5;
   position: absolute;
   top: 0;
   right: 24px;
@@ -110,6 +110,12 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   width: 48px;
 }
 
+.ellipsis {
+  white-space: nowrap; /* 줄바꿈 없이 한 줄로 */
+  overflow: hidden; /* 넘친 내용 숨기기 */
+  text-overflow: ellipsis; /* 넘친 부분에 ... 표시 */
+}
+
 .chat .dropdown-menu {
   border: 0;
   padding: 16px;
@@ -120,7 +126,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 }
 
 .chat .dropdown-menu::after {
-  content: '';
+  content: "";
   height: 12px;
   width: 12px;
   background: white;
@@ -186,7 +192,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 .inbox .text .msg {
   width: 100%;
   padding: 12px;
-  background: #F6F6F6;
+  background: #f6f6f6;
   border-radius: 24px 24px 24px 0;
   font-size: 14px;
   font-weight: 500;
@@ -200,13 +206,49 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   text-align: right;
 }
 
-.inbox .text .time {
+/* .inbox .text .time {
   font-size: 10px;
   font-weight: 500;
   color: var(--gray-60);
 }
 
+.inbox .text .read-count {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.inbox .right .text .read-count {
+  text-align: end;
+}
+
 .inbox .right .text .time {
+  text-align: end;
+} */
+
+.inbox .msg-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.inbox .msg-info .time {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--gray-60);
+}
+
+.inbox .msg-info .read-count {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.inbox .right .msg-info .read-count {
+  text-align: end;
+}
+
+.inbox .right .msg-info .time {
   text-align: end;
 }
 
@@ -261,7 +303,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 /*===========================================================
 05: video-call CSS
 =============================================================*/
-.video-call{
+.video-call {
   height: calc(100vh - 92px);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -269,12 +311,12 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   position: relative;
 }
 
-.video-call .img-main{
+.video-call .img-main {
   height: 50%;
   width: 100%;
 }
 
-.call-info{
+.call-info {
   position: absolute;
   bottom: 26px;
   left: 24px;
@@ -282,35 +324,35 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   z-index: 20;
 }
 
-.call-info .call-info-main{
+.call-info .call-info-main {
   background: var(--primary-text);
   border-radius: 50px;
   padding: 12px 24px;
 }
 
-.call-info .image{
+.call-info .image {
   height: 45px;
   width: 45px;
 }
 
-.call-info h5{
+.call-info h5 {
   font-size: 14px;
   font-weight: 700;
-  color: #FEFEFE;
+  color: #fefefe;
 }
 
-.call-info p{
+.call-info p {
   font-size: 12px;
   color: var(--gray-40);
 }
 
-.call-info .dot{
+.call-info .dot {
   height: 9px;
   width: 9px;
   background: var(--alert);
 }
 
-.call-info .time{
+.call-info .time {
   font-weight: 500;
   color: var(--gray-30);
 }
@@ -318,35 +360,35 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 /*===========================================================
 06: action CSS
 =============================================================*/
-.action{
+.action {
   padding: 22px 46px;
 }
 
 .action ul a,
-.action ul button{
+.action ul button {
   height: 48px;
   width: 48px;
   background: var(--gray-30);
 }
 
 .action ul a.call,
-.action ul button.call{
+.action ul button.call {
   background: var(--alert);
 }
 
 /*===========================================================
 07: audio-call CSS
 =============================================================*/
-.audio-call{
+.audio-call {
   height: 100vh;
   width: 100%;
 }
 
-.audio-call .call-info{
+.audio-call .call-info {
   bottom: 40px;
 }
 
-.audio-call .page-title{
+.audio-call .page-title {
   display: block;
   position: absolute;
   top: 0;
@@ -355,12 +397,12 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   background: transparent;
 }
 
-.audio-call .page-title .back-btn{
+.audio-call .page-title .back-btn {
   background: rgba(255, 255, 255, 0.56);
 }
 
 .audio-call .call-info a,
-.audio-call .call-info button{
+.audio-call .call-info button {
   height: 60px;
   width: 60px;
   background: white;
@@ -369,14 +411,14 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 }
 
 .audio-call .call-info a.call,
-.audio-call .call-info button.call{
+.audio-call .call-info button.call {
   height: 70px;
   width: 70px;
   background: var(--alert);
   margin: auto;
 }
 
-.audio-call .call-info .btns{
+.audio-call .call-info .btns {
   margin-top: -12px;
   margin-bottom: 32px;
 }
@@ -384,19 +426,19 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 /*===========================================================
 08: dark-mode CSS
 =============================================================*/
-.dark-mode .message .single-chat .single-main{
+.dark-mode .message .single-chat .single-main {
   background: var(--gray-100);
 }
 
 .dark-mode .message .single-chat h4,
-.dark-mode .type-msg .input-msg ,
-.dark-mode .chat .dropdown-item{
+.dark-mode .type-msg .input-msg,
+.dark-mode .chat .dropdown-item {
   color: white;
 }
 
 .dark-mode .message .single-chat p,
 .dark-mode .message .single-chat h5,
-.dark-mode .type-msg .input-msg::placeholder{
+.dark-mode .type-msg .input-msg::placeholder {
   color: var(--gray-40);
 }
 
@@ -404,12 +446,12 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 .dark-mode .type-msg .type-main,
 .dark-mode .chat .dropdown-menu,
 .dark-mode .chat .dropdown-menu::after,
-.dark-mode .action ul a, 
-.dark-mode .action ul button{
+.dark-mode .action ul a,
+.dark-mode .action ul button {
   background: var(--gray-80);
 }
 
-.dark-mode .inbox .text .msg{
+.dark-mode .inbox .text .msg {
   background: var(--gray-90);
   color: white;
 }
@@ -420,12 +462,13 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 
 .dark-mode .chat .page-title .more-btn img,
 .dark-mode .chat .dropdown-menu li:first-child .dropdown-item img,
-.dark-mode .action ul a img, 
-.dark-mode .action ul button img{
-  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(322deg) brightness(102%) contrast(102%);
+.dark-mode .action ul a img,
+.dark-mode .action ul button img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%)
+    hue-rotate(322deg) brightness(102%) contrast(102%);
 }
 
-.dark-mode .action ul a.call, 
+.dark-mode .action ul a.call,
 .dark-mode .action ul button.call {
   background: var(--alert);
 }
