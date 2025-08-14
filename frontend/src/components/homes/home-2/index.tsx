@@ -7,6 +7,7 @@ import HeaderOne from "../../../layouts/headers/HeaderOne";
 // import { Link } from "react-router-dom";
 import ServiceModal from "../../../modals/ServiceModal";
 import ScrollTop from "../../common/ScrollTop";
+import Footer from "../../../layouts/footers/Footer";
 
 const Products = () => {
 	const [showModal, setShowModal] = useState(false);
@@ -49,6 +50,8 @@ const Products = () => {
 
 				
 			</main>
+
+			<Footer />
 
 			<ServiceModal setShowModal={setShowModal} showModal={showModal} />
 		</>
