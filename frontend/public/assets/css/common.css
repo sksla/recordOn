@@ -801,6 +801,61 @@ body,
   left: 50%; /* 화면 가로 중앙 */
   transform: translateX(-50%); /* 메뉴 너비 만큼 왼쪽으로 이동해서 중앙 정렬 */
   width: 430px; /* 고정된 너비 */
+
+  display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+}
+
+.bottom-nav .icon {
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	background-color: #a5d2d8; /* 아이콘 색상 9DA5AB 기존 밝은 회색, */
+}
+
+.bottom-nav .icon:hover {
+	background-color: #9DA5AB; /* hover 시 색상 */
+
+  /* mask 공통 설정 */
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+/* mask 적용 */
+.bottom-nav .home {
+	-webkit-mask: url('/assets/svg/bottom-nav/home.svg') no-repeat center / contain;
+	mask: url('/assets/svg/bottom-nav/home.svg') no-repeat center / contain;
+  
+/* 위치 조정 */
+  position: relative;
+  top: 6px; /* 필요에 따라 px 값 조절 */
+
+}
+
+.bottom-nav .edit {
+	-webkit-mask: url('/assets/svg/edit.svg') no-repeat center / contain;
+	mask: url('/assets/svg/edit.svg') no-repeat center / contain;
+}
+
+.bottom-nav .calendar {
+	-webkit-mask: url('/assets/svg/calendar.svg') no-repeat center / contain;
+	mask: url('/assets/svg/calendar.svg') no-repeat center / contain;
+}
+
+.bottom-nav .map {
+	-webkit-mask: url('/assets/svg/map-marker.svg') no-repeat center / contain;
+	mask: url('/assets/svg/map-marker.svg') no-repeat center / contain;
+}
+
+.bottom-nav .message {
+	-webkit-mask: url('/assets/svg/message-square-dots.svg') no-repeat center / contain;
+	mask: url('/assets/svg/message-square-dots.svg') no-repeat center / contain;
 }
 
 /*===========================================================
