@@ -1,7 +1,7 @@
  
 
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HeaderOne = () => {
 
@@ -71,17 +71,21 @@ const HeaderOne = () => {
 	const toggleShow = () => {
 		setShow(!show);
 	};
+	const navigate = useNavigate();
+	const handleBack = () => {
+    navigate(-1);  // -1 navigates back to the previous page
+  	};
 
 	return (
 		<>
 			<section className="wrapper dz-mode">
 				<div className="menu">
-					<button onClick={toggleShow} className="toggle-btn">
-						<img
-							src="assets/svg/menu/burger-white.svg"
-							alt=""
-							className="icon"
-						/>
+					<button
+						onClick={handleBack}
+						type="button"
+						className="back-btn back-page-btn d-flex align-items-center justify-content-center rounded-full"
+						>
+						<img src="/assets/svg/menu/back-white.svg" alt="Icon" />
 					</button>
 
 					<div className="btn-grp d-flex align-items-center gap-16">

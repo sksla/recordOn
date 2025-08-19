@@ -1,6 +1,6 @@
  
 
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InfoArea from "./InfoArea"; 
 // import { Swiper, SwiperSlide } from "swiper/react";
 import HeaderOne from "../../../layouts/headers/HeaderOne";
@@ -13,6 +13,69 @@ import Footer from "../../../layouts/footers/Footer";
 const Products = () => {
 	const [showModal, setShowModal] = useState(false);
  
+	useEffect(() => {
+			const chk: HTMLInputElement | null = document.getElementById(
+				"check-mode"
+			) as HTMLInputElement;
+			const modeChk: HTMLInputElement | null = document.getElementById(
+				"mode-change"
+			) as HTMLInputElement;
+			const enableMode: HTMLInputElement | null = document.getElementById(
+				"enableMode"
+			) as HTMLInputElement;
+	
+			const toggleDarkMode = (darkModeStatus: boolean): void => {
+				document.body.classList.toggle("dark-mode", darkModeStatus);
+			};
+	
+			const changeHandler = (event: Event) => {
+				const target = event.target as HTMLInputElement;
+				const darkModeStatus = target.checked;
+				toggleDarkMode(darkModeStatus);
+				localStorage.setItem("darkModeStatus", darkModeStatus.toString());
+				modeChk.checked = darkModeStatus;
+				enableMode.checked = darkModeStatus;
+			};
+	
+			if (chk) {
+				chk.addEventListener("change", changeHandler);
+	
+				const storedDarkModeStatus = localStorage.getItem("darkModeStatus");
+				if (storedDarkModeStatus === "true") {
+					toggleDarkMode(true);
+					chk.checked = true;
+				}
+			}
+	
+			if (modeChk) {
+				modeChk.addEventListener("change", changeHandler);
+	
+				const storedDarkModeStatus = localStorage.getItem("darkModeStatus");
+				if (storedDarkModeStatus === "true") {
+					toggleDarkMode(true);
+					modeChk.checked = true;
+				}
+			}
+	
+			if (enableMode) {
+				enableMode.addEventListener("change", changeHandler);
+	
+				const storedDarkModeStatus = localStorage.getItem("darkModeStatus");
+				if (storedDarkModeStatus === "true") {
+					toggleDarkMode(true);
+					enableMode.checked = true;
+				}
+			}
+	
+			// Clean-up
+			return () => {
+				if (chk) chk.removeEventListener("change", changeHandler);
+				if (modeChk) modeChk.removeEventListener("change", changeHandler);
+				if (enableMode) enableMode.removeEventListener("change", changeHandler);
+			};
+		}, []);
+	
+
 	
 	return (
 		<>
@@ -45,10 +108,19 @@ const Products = () => {
 									<img src="/assets/svg/filter-black.svg" alt="filter" />
 								</button>
 							</div>
-							
 						</div>
+						
+						{/* all-pages */}
+						<Link to="/all-pages">
+							<img
+								src="assets/svg/i.svg"
+								alt="메뉴 아이콘"
+								className="icon"
+								/>
+						</Link>
 					</form>
 				</section>
+				
 
 				
 			</main>
