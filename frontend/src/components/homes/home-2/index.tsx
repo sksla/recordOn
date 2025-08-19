@@ -47,9 +47,6 @@ const Products = () => {
 							</div>
 							
 						</div>
-						<Link to="/map">
-							<img src="assets/svg/menu/map-marker.svg" alt="icon" />
-						</Link>
 					</form>
 				</section>
 

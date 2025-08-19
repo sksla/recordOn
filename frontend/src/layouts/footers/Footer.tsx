@@ -17,7 +17,7 @@ const Footer = () => {
 						<Link to="/explore" className="icon calendar"></Link>
 					</li>
 					<li>
-						<Link to="/wishlist" className="icon map"></Link>
+						<Link to="/map" className="icon map"></Link>
 					</li>
 					<li>
 						<Link to="/user-profile" className="icon message"></Link>
