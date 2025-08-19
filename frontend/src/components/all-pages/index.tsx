@@ -92,17 +92,6 @@ const AllPages = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/otp">
-                  <div className="d-flex align-items-center gap-16">
-                    <span className="icon">
-                      <img src="assets/svg/menu/box-white.svg" alt="" />
-                    </span>
-                    enter OTP page
-                  </div>
-                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
-                </Link>
-              </li>
-              <li>
                 <Link to="/select-language">
                   <div className="d-flex align-items-center gap-16">
                     <span className="icon">
@@ -131,6 +120,24 @@ const AllPages = () => {
                   <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
                 </Link>
               </li>
+            </ul>
+          </div>
+          <div className="pages-title">
+            <h2>Calendar</h2>
+          </div>
+          <div className="page-list">
+            <ul>
+              <li>
+                <Link to="/otp">
+                  <div className="d-flex align-items-center gap-16">
+                    <span className="icon">
+                      <img src="assets/svg/menu/box-white.svg" alt="" />
+                    </span>
+                    Calendar page
+                  </div>
+                  <img src="assets/svg/menu/chevron-right-black.svg" alt="" />
+                </Link>
+              </li>              
             </ul>
           </div>
           <div className="pages-title">
