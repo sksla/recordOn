@@ -11,7 +11,7 @@ const Footer = () => {
 						<Link to="/home" className="icon home"></Link>
 					</li>
 					<li>
-						<Link to="/explore" className="icon edit"></Link>
+						<Link to="/todo" className="icon edit"></Link>
 					</li>
 					<li>
 						<Link to="/explore" className="icon calendar"></Link>
