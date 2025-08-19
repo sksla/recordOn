@@ -35,7 +35,7 @@ import SplashScreen from "./components/splash-screen";
 import Support from "./components/profile/support";
 import Language from "./components/profile/language";
 
-import KakaoMapPage from './components/auth/map'; //map 경로 설정
+import KakaoMap from './components/auth/map'; //map 경로 설정
 
 
 const router = createBrowserRouter([
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
   { path: "/support", element: <Support /> },
   { path: "/language", element: <Language /> },
 
-  { path: "/map", element: <KakaoMapPage /> }, // map 경로 설정
+  { path: "/map", element: <KakaoMap /> }, // map 경로 설정
 
   // { path: "*", element: <NotFound />, errorElement: <CustomError /> },
 ]);
