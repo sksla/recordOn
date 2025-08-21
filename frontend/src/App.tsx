@@ -37,6 +37,7 @@ import Language from "./components/profile/language";
 
 import KakaoMap from './components/auth/map'; //map 경로 설정
 import TodoMain from './components/auth/todo'; //todo 경로
+import Calendar from "./components/auth/calendar";
 
 
 const router = createBrowserRouter([
@@ -72,7 +73,8 @@ const router = createBrowserRouter([
   { path: "/language", element: <Language /> },
 
   { path: "/map", element: <KakaoMap /> }, // map 경로 설정
-  { path: "/todo", element: <TodoMain /> } // todo 경로
+  { path: "/todo", element: <TodoMain /> }, // todo 경로
+  { path: "calendar", element: <Calendar /> } // calendar 경로
   
   // { path: "*", element: <NotFound />, errorElement: <CustomError /> },
 ]);
