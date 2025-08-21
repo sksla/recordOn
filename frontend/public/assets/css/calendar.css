@@ -1,18 +1,81 @@
-.main-calendar-wrapper{
-  padding-top: 50px;
-  min-height: calc(100vh - 50px - 60px);
-
+/* Calendar 페이지 wrapper 전체 글씨체 */
+.calendar-page {
+  font-family: 'Comic Sans MS', sans-serif; /* 오직 Calendar 페이지 전용 */
 }
 
-/* Header 툴바 버튼 Sketchy 스타일 적용 */
-.fc .fc-toolbar button {
-  background-color: #fefefe; /* 버튼 배경 */
+/* FullCalendar 내부 글씨체 상속 */
+.calendar-page .fc {
+  font-family: inherit; /* wrapper의 글씨체만 사용 */
+}
+
+/* 이벤트 스타일 */
+.calendar-page .fc .fc-event {
+  font-family: inherit;
+}
+
+/* 툴바 */
+.calendar-page .fc .fc-toolbar,
+.calendar-page .fc .fc-toolbar button,
+.calendar-page .fc .fc-toolbar-title {
+  font-family: inherit;
+}
+
+/* 툴바 z-index 및 flex 설정 */
+.calendar-page .fc .fc-toolbar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-wrap: nowrap;  /* 버튼 한 줄 유지 */
+  gap: 0.3rem;        /* 버튼 간격 */
+}
+
+/* 툴바 버튼 스타일 (Sketchy 느낌) */
+.calendar-page .fc .fc-toolbar button {
+  padding: 0.25rem 0.4rem;
+  font-size: 0.75rem;
+  background-color: #fefefe;
   border: 1px solid #333;
   border-radius: 5px;
-  color: #333;                /* 글자색 */
+  color: #333;
   font-weight: 500;
-  font-family: 'Comic Sans MS', sans-serif; /* Sketchy 느낌 */
+  white-space: nowrap; /* 줄 바꿈 방지 */
 }
-.fc .fc-toolbar button:hover {
+
+.calendar-page .fc .fc-toolbar button:hover {
   background-color: #fffae6;
+}
+
+/* 툴바 제목 */
+.calendar-page .fc .fc-toolbar-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .calendar-page {
+    padding-top: 50px; /* Header 겹침 방지 */
+    min-height: calc(100vh - 50px - 60px); /* Header + Footer 공간 확보 */
+  }
+
+  .calendar-page .fc .fc-toolbar button {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.3rem;
+  }
+
+  .calendar-page .fc .fc-toolbar-title {
+    font-size: 0.9rem;
+  }
+}
+
+/* 캘린더 전체 반응형 */
+.calendar-page .fc {
+  max-width: 100%;
+  overflow-x: auto; /* 모바일에서 스크롤 가능 */
+}
+
+/* Footer 공간 확보 */
+.calendar-page {
+  padding-top: 70px; /* HeaderOne 겹침 방지 */
+  min-height: calc(100vh - 50px - 60px); /* Footer 60px 가정 */
 }
