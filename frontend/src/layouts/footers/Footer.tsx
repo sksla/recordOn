@@ -14,7 +14,7 @@ const Footer = () => {
 						<Link to="/todo" className="icon edit"></Link>
 					</li>
 					<li>
-						<Link to="/explore" className="icon calendar"></Link>
+						<Link to="/calendar" className="icon calendar"></Link>
 					</li>
 					<li>
 						<Link to="/map" className="icon map"></Link>
