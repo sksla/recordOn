@@ -1,0 +1,18 @@
+.main-calendar-wrapper{
+  padding-top: 50px;
+  min-height: calc(100vh - 50px - 60px);
+
+}
+
+/* Header 툴바 버튼 Sketchy 스타일 적용 */
+.fc .fc-toolbar button {
+  background-color: #fefefe; /* 버튼 배경 */
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #333;                /* 글자색 */
+  font-weight: 500;
+  font-family: 'Comic Sans MS', sans-serif; /* Sketchy 느낌 */
+}
+.fc .fc-toolbar button:hover {
+  background-color: #fffae6;
+}
