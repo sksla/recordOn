@@ -20,6 +20,9 @@
 @import "../../public/assets/css/home.css";
 @import "../../public/assets/css/common.css";
 
+/* todo.css 추가 */
+@import "../../public/assets/css/todo.css";
+
 /* ---- 이 부분 수정함 === */
 .page-wrapper {
   width: 430px;
