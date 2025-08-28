@@ -7,33 +7,43 @@ import TodoAdd from './TodoAdd';
 import Footer from "../../../layouts/footers/Footer";
 import { TodoType } from '../../../types/todo';
 
-const TodoMain: React.FC = () => {
+const TodoMain = () => {
   const [todos, setTodos] = useState<TodoType[]>([
     {
       id: Date.now(),
       title: '주 2회 클라이밍 가기',
       isDone: false,
+      date: '2025-08-28',
     },
     {
       id: Date.now() + 1,
       title: '식단 관리하기',
       isDone: false,
+      date: '2025-08-28',
+    },
+    {
+      id: Date.now() + 2,
+      title: '식단 관리하기',
+      isDone: false,
+      date: '2025-08-29',
     },
   ]);
 
-  const [input, setInput] = useState({ title: '', body: '' });
+  const [selectedDate, setSelectedDate] = useState<string>(new Date().toISOString().split('T')[0]);
 
-  const onInsert = () => {
-    if (input.title.trim() === '' || input.body.trim() === '') return;
+  // 선택된 날짜에 맞는 투두 리스트 필터링
+  const filteredTodos = todos.filter(todo => todo.date === selectedDate);
+
+  const onInsert = (title: string, date: string) => {
+    if (title.trim() === '') return;
 
     const newTodo: TodoType = {
       id: Date.now(),
-      title: input.title,
-      // body: input.body,
+      title,
       isDone: false,
+      date,
     };
     setTodos([...todos, newTodo]);
-    setInput({ title: '', body: '' });
   };
 
   const onRemove = (id: number) => {
@@ -53,9 +63,13 @@ const TodoMain: React.FC = () => {
       <main className="home">
         <HeaderOne />
         <TodoTemplate>
-          <CurrentDate todos={todos} />
-          <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
-          <TodoAdd onInsert={onInsert} />
+          <CurrentDate 
+            todos={filteredTodos} 
+            selectedDate={selectedDate} 
+            setSelectedDate={setSelectedDate} 
+          />
+          <TodoList todos={filteredTodos} onRemove={onRemove} onToggle={onToggle} />
+          <TodoAdd onInsert={onInsert} selectedDate={selectedDate} />
         </TodoTemplate>
       </main>
       <Footer />
