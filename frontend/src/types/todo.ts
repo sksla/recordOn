@@ -3,4 +3,5 @@ export type TodoType = {
   title: string;
   // body: string;
   isDone: boolean;
+  date: string;
 };

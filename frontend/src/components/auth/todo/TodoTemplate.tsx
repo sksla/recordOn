@@ -5,7 +5,7 @@ type TodoTemplateProps = {
   children: ReactNode;
 };
 
-const TodoTemplate: React.FC<TodoTemplateProps> = ({ children }) => {
+const TodoTemplate = ({ children } : TodoTemplateProps) => {
   return (
     <div className='template'>
       <div className='todo-wrap'>{children}</div>

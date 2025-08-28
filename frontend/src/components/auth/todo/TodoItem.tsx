@@ -7,8 +7,8 @@ type TodoItemProps = {
   onToggle: (id: number) => void;
 };
 
-const TodoItem: React.FC<TodoItemProps> = ({ todo, onRemove, onToggle }) => {
-  const { id, title, body, isDone } = todo;
+const TodoItem = ({ todo, onRemove, onToggle } : TodoItemProps ) => {
+  const { id, title, isDone } = todo;
 
   return (
     <div className="todo-item">
@@ -20,7 +20,6 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onRemove, onToggle }) => {
         />
         <div className="todo-texts">
           <h3 className={isDone ? 'done' : ''}>{title}</h3>
-          {body && <p className={isDone ? 'done' : ''}>{body}</p>}
         </div>
       </div>
       <button className="delete-btn" onClick={() => onRemove(id)}>
