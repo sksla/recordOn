@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const ChatArea = () => {
@@ -7,10 +7,10 @@ const ChatArea = () => {
     navigate(-1); // -1 navigates back to the previous page
   };
 
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(!open);
-  };
+  // const [open, setOpen] = useState(false);
+  // const handleOpen = () => {
+  //   setOpen(!open);
+  // };
 
   return (
     <>
@@ -23,9 +23,18 @@ const ChatArea = () => {
           >
             <img src="/assets/svg/arrow-left-black.svg" alt="arrow" />
           </button>
-          <h3 className="main-title ellipsis">Richar Kandowend</h3>
-          <div className="dropdown">
-            <button
+          <h3 className="main-title ellipsis">
+            Richar Kandowend, djklfsjdklf, d,mljdklf ,jkfldjklf
+          </h3>
+
+          <div className="more d-flex align-items-center justify-content-around">
+            <div className="member-count">
+              <p>2</p>
+            </div>
+            <Link to="/user-info">
+              <img src="/assets/svg/more.svg" alt="arrow" />
+            </Link>
+            {/* <button
               type="button"
               onClick={() => handleOpen()}
               className={`more-btn d-flex align-items-center justify-content-center rounded-full ${
@@ -35,36 +44,7 @@ const ChatArea = () => {
               aria-expanded="false"
             >
               <img src="/assets/svg/more.svg" alt="arrow" />
-            </button>
-
-            <ul
-              className={`dropdown-menu ${open ? "show" : ""}`}
-              style={{
-                position: "absolute",
-                inset: "0px 0px auto auto",
-                margin: "0px",
-                transform: "translate(-35px, 50px)",
-              }}
-            >
-              <li>
-                <div>대화상대</div>
-                <Link className="dropdown-item" to="/audio-call">
-                  <img
-                    style={{ width: "10px", height: "10px" }}
-                    src="/assets/images/chat/img-1.png"
-                    className="w-100 img-fluid h-100 object-fit-cover rounded-full"
-                    alt="call"
-                  />
-                  Voice Call
-                </Link>
-              </li>
-              <li>
-                <Link className="dropdown-item" to="/video-call">
-                  <img src="/assets/svg/video-call.svg" alt="video" />
-                  Video Call
-                </Link>
-              </li>
-            </ul>
+            </button> */}
           </div>
         </div>
 
@@ -82,7 +62,7 @@ const ChatArea = () => {
               </div>
 
               <div className="text">
-                <p className="msg">상대방이 보낸 메세지</p>
+                <p className="msg">무서운 이야기 좀 누가 해줘</p>
               </div>
               <div className="msg-info">
                 <p className="read-count pt-04">1</p>
@@ -105,7 +85,10 @@ const ChatArea = () => {
 							</div>
 							*/}
               <div className="text">
-                <p className="msg">내가 보낸 메세지</p>
+                <p className="msg">
+                  옛날에 아주 무서운 귀신이 있었은 그냥 있었은 딱히 뭘 하진
+                  않았은
+                </p>
               </div>
               <div className="msg-info">
                 <p className="read-count pt-04">1</p>
