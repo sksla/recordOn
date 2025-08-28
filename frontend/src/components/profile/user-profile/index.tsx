@@ -74,10 +74,10 @@ const UserProfile = () => {
               <h3>Andy Lexsian(닉네임)</h3>
               <p className="d-flex align-items-center gap-04 location mt-04">
                 <img src="/assets/svg/map-marker.svg" alt="icon" />
-                Uttar Pradesh, India (아이디)
+                Uttar Pradesh, India (아이디 or 계정)
               </p>
               <p className="d-flex align-items-center gap-04 location mt-04">
-                <img src="/assets/svg/map-marker.svg" alt="icon" />
+                {/* <img src="/assets/svg/map-marker.svg" alt="icon" /> */}
                 회원 코드 :00000001
               </p>
             </div>
@@ -90,7 +90,7 @@ const UserProfile = () => {
 
         <section className="user-personal">
           <div className="mt-32">
-            <h4 className="mb-16">Friend</h4>
+            <h4 className="mb-16">친구</h4>
             <ul className="setting-list">
               <li>
                 <Link
@@ -133,7 +133,7 @@ const UserProfile = () => {
           </div>
 
           <div className="mt-32">
-            <h4 className="mb-16">Security</h4>
+            <h4 className="mb-16">일반</h4>
             <ul className="setting-list">
               <li>
                 <Link
@@ -148,19 +148,19 @@ const UserProfile = () => {
                   <img src="/assets/svg/chevron-right.svg" alt="Icon" />
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/forgot-password"
                   className="d-flex align-items-center justify-content-between"
                 >
                   <div className="d-flex align-items-center gap-12 shrink-0">
                     <img src="/assets/svg/lock-open.svg" alt="icon" />
-                    <p>Forgot Password</p>
+                    <p>비밀번호 찾기</p>
                   </div>
 
                   <img src="/assets/svg/chevron-right.svg" alt="Icon" />
                 </Link>
-              </li>
+              </li> */}
 
               {/* <li>
                 <Link
@@ -175,7 +175,7 @@ const UserProfile = () => {
                   <img src="/assets/svg/chevron-right.svg" alt="Icon" />
                 </Link>
               </li> */}
-              <li>
+              {/* <li>
                 <Link
                   to="/notifications"
                   className="d-flex align-items-center justify-content-between"
@@ -187,6 +187,20 @@ const UserProfile = () => {
 
                   <img src="/assets/svg/chevron-right.svg" alt="Icon" />
                 </Link>
+              </li> */}
+              <li className="d-flex align-items-center justify-content-between">
+                <div className="d-flex align-items-center gap-12 shrink-0">
+                  <img src="/assets/svg/bell-black.svg" alt="icon" />
+                  <p>알림</p>
+                </div>
+                <label className="toggle-switch">
+                  <input
+                    type="checkbox"
+                    className="mode-switch"
+                    defaultChecked
+                  />
+                  <span className="slider"></span>
+                </label>
               </li>
             </ul>
           </div>
@@ -224,7 +238,7 @@ const UserProfile = () => {
           </div> */}
 
           <div className="mt-32">
-            <h4 className="mb-16">About</h4>
+            <h4 className="mb-16">고객센터</h4>
             <ul className="setting-list">
               <li>
                 <Link
@@ -233,7 +247,7 @@ const UserProfile = () => {
                 >
                   <div className="d-flex align-items-center gap-12 shrink-0">
                     <img src="/assets/svg/shield-round.svg" alt="icon" />
-                    <p>Legal and Policies</p>
+                    <p>운영정책</p>
                   </div>
 
                   <img src="/assets/svg/chevron-right.svg" alt="Icon" />
@@ -246,7 +260,7 @@ const UserProfile = () => {
                 >
                   <div className="d-flex align-items-center gap-12 shrink-0">
                     <img src="/assets/svg/question.svg" alt="icon" />
-                    <p>Help & Support</p>
+                    <p>고객지원</p>
                   </div>
 
                   <img src="/assets/svg/chevron-right.svg" alt="Icon" />
@@ -256,7 +270,7 @@ const UserProfile = () => {
                 <div className="d-flex align-items-center justify-content-between">
                   <div className="d-flex align-items-center gap-12 shrink-0">
                     <img src="/assets/svg/activity.svg" alt="icon" />
-                    <p className="mode-text">Dark Mode</p>
+                    <p className="mode-text">다크모드</p>
                   </div>
 
                   <label className="toggle-switch">
