@@ -19,13 +19,125 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 /*===========================================================
 01: message CSS
 =============================================================*/
-.message .single-chat .image {
+
+.message-main .message-search .input-field {
+  padding: 0;
+}
+
+/* 단체 채팅방 */
+.message .multi-chat .image {
   width: 56px;
   height: 56px;
 }
 
-.message-main .message-search .input-field {
-  padding: 0;
+.message .multi-chat .multi-main {
+  padding: 16px 24px;
+  background: white;
+}
+
+.message .multi-chat h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+.message .multi-chat p {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--additional1);
+  padding-top: 4px;
+}
+
+.message .multi-chat h5 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--additional1);
+}
+
+.message .multi-chat span {
+  height: 24px;
+  width: 24px;
+  background: var(--primary);
+  font-size: 10px;
+  line-height: 24px;
+  font-weight: 600;
+  color: white;
+}
+
+/* 프로필 이미지 그룹 */
+
+/* .image-group {
+  position: relative;
+  width: 40px;
+  height: 40px;
+} */
+
+/* 모든 이미지 기본 스타일 */
+/* .image-group img {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid white;
+} */
+
+/* --- 1명 (꽉 채우기) --- */
+/* .image-group.count-1 img {
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 0;
+} */
+
+/* --- 2명 (대각선 배치) --- */
+/* .image-group.count-2 img:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+.image-group.count-2 img:nth-child(2) {
+  bottom: 0;
+  right: 0;
+} */
+
+/* --- 3명 (위 1, 아래 2) --- */
+/* .image-group.count-3 img:nth-child(1) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.image-group.count-3 img:nth-child(2) {
+  bottom: 0;
+  left: 0;
+}
+.image-group.count-3 img:nth-child(3) {
+  bottom: 0;
+  right: 0;
+} */
+
+/* --- 4명 이상 (2x2 그리드) --- */
+/* .image-group.count-4 img:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+.image-group.count-4 img:nth-child(2) {
+  top: 0;
+  right: 0;
+}
+.image-group.count-4 img:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+.image-group.count-4 img:nth-child(4) {
+  bottom: 0;
+  right: 0;
+} */
+
+/* 개인 채팅방 */
+
+.message .single-chat .image {
+  width: 56px;
+  height: 56px;
 }
 
 .message .single-chat .single-main {
@@ -110,10 +222,14 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   width: 48px;
 }
 
-.ellipsis {
+.chat .page-title .ellipsis {
   white-space: nowrap; /* 줄바꿈 없이 한 줄로 */
   overflow: hidden; /* 넘친 내용 숨기기 */
   text-overflow: ellipsis; /* 넘친 부분에 ... 표시 */
+}
+
+.chat .page-title .member-count p {
+  font-size: 15px;
 }
 
 .chat .dropdown-menu {
