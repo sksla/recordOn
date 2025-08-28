@@ -185,7 +185,7 @@ input[type="checkbox"]:checked::after {
 /* 4.CurrentDate.tsx */
 .curdate {
   font-weight: 700; /* 두껍게 */
-  font-size: 24px; /* 크기 좀 키우기 */
+  font-size: 22px; /* 크기 좀 키우기 */
   margin-bottom: 8px; /* 아래 여백 */
 }
 
@@ -195,4 +195,31 @@ input[type="checkbox"]:checked::after {
   font-weight: 500;
   margin-top: 0;
   margin-bottom: 15px; /* 위아래 공간 주기 */
+}
+
+.date-controls {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.date-controls button {
+  padding: 2px 2px;
+  cursor: pointer;
+  /* 필요하면 추가 스타일 */
+}
+
+.date-controls button img {
+  width: 24px;  /* 아이콘 크기 조절 */
+  height: 24px;
+}
+
+.btn-changedate {
+  font-size: 20px;   /* 글자 크기 키우기 */
+}
+
+.date-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 수직 가운데 정렬 */
 }
