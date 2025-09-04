@@ -104,7 +104,7 @@ const UserProfile = () => {
                       width="24px"
                       height="24px"
                     />
-                    <p>친구 목록</p>
+                    <p>친구</p>
                   </div>
 
                   <img src="/assets/svg/chevron-right.svg" alt="Icon" />
