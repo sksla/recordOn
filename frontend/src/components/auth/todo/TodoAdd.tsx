@@ -5,7 +5,7 @@ type TodoAddProps = {
   selectedDate: string; // 선택된 날짜를 props로 받음
 };
 
-const TodoAdd = ({ onInsert, selectedDate } : TodoAddProps) => {
+const TodoAdd = ({ onInsert, selectedDate }: TodoAddProps) => {
   const [contents, setContents] = useState('');
   const [open, setOpen] = useState(false);
   const inputEl = useRef<HTMLInputElement>(null);
@@ -35,14 +35,8 @@ const TodoAdd = ({ onInsert, selectedDate } : TodoAddProps) => {
   return (
     <>
       {open && (
-        <div
-          className="modalOverlay"
-          onClick={() => setOpen(false)} // 바깥 클릭 시 닫기
-        >
-          <div
-            className="insertPosition"
-            onClick={(e) => e.stopPropagation()} // 모달 내부 클릭은 전파 막기
-          >
+        <div className="modalOverlay" onClick={() => setOpen(false)}>
+          <div className="insertPosition" onClick={(e) => e.stopPropagation()}>
             <form className="insertForm" onSubmit={onSubmit}>
               <p className="modalTitle">Today</p>
               <input
@@ -52,7 +46,6 @@ const TodoAdd = ({ onInsert, selectedDate } : TodoAddProps) => {
                 placeholder="할 일을 입력하고 Enter를 눌러주세요."
                 onChange={onChange}
               />
-              <button type="submit">추가</button>
             </form>
           </div>
         </div>

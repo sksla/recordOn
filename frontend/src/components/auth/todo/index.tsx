@@ -10,26 +10,28 @@ import { TodoType } from '../../../types/todo';
 const TodoMain = () => {
   const [todos, setTodos] = useState<TodoType[]>([
     {
-      id: Date.now(),
+      id: 1,
       title: '주 2회 클라이밍 가기',
       isDone: false,
-      date: '2025-08-28',
+      date: '2025-09-04',
     },
     {
-      id: Date.now() + 1,
+      id: 2,
       title: '식단 관리하기',
       isDone: false,
-      date: '2025-08-28',
+      date: '2025-09-04',
     },
     {
-      id: Date.now() + 2,
+      id: 3,
       title: '식단 관리하기',
       isDone: false,
-      date: '2025-08-29',
+      date: '2025-09-05',
     },
   ]);
 
-  const [selectedDate, setSelectedDate] = useState<string>(new Date().toISOString().split('T')[0]);
+  const [selectedDate, setSelectedDate] = useState<string>(
+    new Date().toISOString().split('T')[0] // 오늘 날짜
+  );
 
   // 선택된 날짜에 맞는 투두 리스트 필터링
   const filteredTodos = todos.filter(todo => todo.date === selectedDate);
@@ -37,12 +39,16 @@ const TodoMain = () => {
   const onInsert = (title: string, date: string) => {
     if (title.trim() === '') return;
 
+    // 현재 todos에서 가장 큰 id + 1
+    const nextId = todos.length > 0 ? Math.max(...todos.map(todo => todo.id)) + 1 : 1;
+
     const newTodo: TodoType = {
-      id: Date.now(),
+      id: nextId,
       title,
       isDone: false,
       date,
     };
+
     setTodos([...todos, newTodo]);
   };
 
