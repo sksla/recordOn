@@ -35,10 +35,10 @@ import SplashScreen from "./components/splash-screen";
 import Support from "./components/profile/support";
 import Language from "./components/profile/language";
 
-import KakaoMap from './components/auth/map'; //map 경로 설정
-import TodoMain from './components/auth/todo'; //todo 경로
+import KakaoMap from "./components/auth/map"; //map 경로 설정
+import TodoMain from "./components/auth/todo"; //todo 경로
 import Calendar from "./components/auth/calendar";
-
+import EditChatArea from "./components/chat/chat-area/edit-chat-area";
 
 const router = createBrowserRouter([
   { path: "/", element: <MainHome /> },
@@ -74,8 +74,10 @@ const router = createBrowserRouter([
 
   { path: "/map", element: <KakaoMap /> }, // map 경로 설정
   { path: "/todo", element: <TodoMain /> }, // todo 경로
-  { path: "calendar", element: <Calendar /> } // calendar 경로
-  
+  { path: "calendar", element: <Calendar /> }, // calendar 경로
+
+  { path: "/edit-chat-area", element: <EditChatArea /> }, // 채팅방 편집 페이지 경로
+
   // { path: "*", element: <NotFound />, errorElement: <CustomError /> },
 ]);
 

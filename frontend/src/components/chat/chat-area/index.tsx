@@ -24,14 +24,15 @@ const ChatArea = () => {
             <img src="/assets/svg/arrow-left-black.svg" alt="arrow" />
           </button>
           <h3 className="main-title ellipsis">
-            Richar Kandowend, djklfsjdklf, d,mljdklf ,jkfldjklf
+            Richar Kandowend, djklfsjdklf, d,mljdklf ,jkfldjklf(채탕방명 or
+            참여자 이름)
           </h3>
 
           <div className="more d-flex align-items-center justify-content-around">
             <div className="member-count">
               <p>2</p>
             </div>
-            <Link to="/user-info">
+            <Link to="/edit-chat-area">
               <img src="/assets/svg/more.svg" alt="arrow" />
             </Link>
             {/* <button
