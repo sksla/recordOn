@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+//import { useEffect } from "react";
 import HeaderOne from "../../../layouts/headers/HeaderOne";
 import Footer from "../../../layouts/footers/Footer";
 
@@ -49,6 +49,10 @@ export default function Calendar(){
                             next:'>',
                             today:'오늘'
                         }}
+                        editable={true}
+                        selectable={true}
+                        eventStartEditable={true}
+                        eventDurationEditable={true}
                         height="auto"
                         contentHeight="auto"
                         firstDay={0}
