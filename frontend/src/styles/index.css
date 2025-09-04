@@ -23,6 +23,9 @@
 /* todo.css 추가 */
 @import "../../public/assets/css/todo.css";
 
+/* map.css 추가 */
+@import "../../public/assets/css/map.css";
+
 /* ---- 이 부분 수정함 === */
 .page-wrapper {
   width: 430px;
