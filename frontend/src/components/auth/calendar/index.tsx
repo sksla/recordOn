@@ -55,7 +55,7 @@ export default function Calendar(){
 
 
     // ===================== 이벤트 핸들러 함수 ==============================
-/*
+
     // 날짜 클릭시 실행
     const handleDateClick = (arg) => {
         setSelectedDate(arg.dateStr); // -> yyyy-mm-dd
@@ -83,8 +83,7 @@ export default function Calendar(){
         setShowAddModal(false);
         setShowListModal(false);
     }
- */
-/*
+
     return (
         <>
             <main>
@@ -127,9 +126,9 @@ export default function Calendar(){
                         }}
                     />
                 </div>
-*/
+
                 {/* 일정 목록 모달 */}
-               // {showListModal && (
+                {showListModal && (
                     <div className="-modal-dialog">
                         <h3> 일정 목록</h3>
                         <div className="modal-content">
@@ -137,7 +136,7 @@ export default function Calendar(){
                            
                         </div>
                     </div>
-                //)}
+                )}
 
 
 
