@@ -95,12 +95,12 @@ function KakaoMap() {
         </div>
 
         {/* 검색창 - 지도 아래 */}
-        <div style={{ marginTop: "10px" }}>
+        <div>
           <MapSearch mapObj={mapObj} onSelectPlace={handleSelectPlace} />
         </div>
 
         {/* 즐겨찾기 맵핀 리스트 */}
-        <div style={{ marginTop: "10px" }}>
+        <div>
           {pins
             .filter(pin => selectedList === "지도보기" || pin.list === selectedList)
             .map(pin => (

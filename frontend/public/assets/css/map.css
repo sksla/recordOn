@@ -30,7 +30,7 @@
 
 .kakaomap-dropdown {
   position: absolute;
-  top: 50px;
+  bottom: 50px;
   left: 10px;
   width: calc(71% + 8px + 12px);
   max-height: 300px;
