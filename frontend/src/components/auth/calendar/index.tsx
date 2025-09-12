@@ -187,7 +187,7 @@ export default function Calendar() {
                 }}
                 className="modal-add-btn"
               >
-                +
+                <span>+</span>
               </button>
             </div>
           </div>
@@ -196,7 +196,7 @@ export default function Calendar() {
         {/* ======== * 일정 추가 모달(showAddModal 상태가 true일 때만) ======= */}
         {showAddModal && (
           <div className="modal-overlay">
-            <div className="modal-contnet">
+            <div className="modal-content">
               <form onSubmit={handleAddEvent}>
                 <div className="modal-header">
                   <h3 className="modal-title">새 일정 추가</h3>
