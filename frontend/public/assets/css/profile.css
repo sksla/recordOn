@@ -34,7 +34,6 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 
 ==================================================*/
 
-
 /*===========================================================
 01: border-box CSS
 =============================================================*/
@@ -197,7 +196,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   border: 1px solid var(--gray-30);
 }
 
-.custom-check-container input:checked~.checkmark {
+.custom-check-container input:checked ~ .checkmark {
   background-color: var(--primary);
   border-color: var(--primary);
 }
@@ -210,11 +209,11 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   left: 4px;
   width: 14px;
   height: 14px;
-  background: url('../svg/check-white.svg') no-repeat center;
+  background: url("../svg/check-white.svg") no-repeat center;
   background-size: contain;
 }
 
-.custom-check-container input:checked~.checkmark:after {
+.custom-check-container input:checked ~ .checkmark:after {
   display: block;
 }
 
@@ -279,7 +278,18 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   position: relative;
 }
 
-.profile-image .image button {
+/* .profile-image .image button {
+  height: 32px;
+  width: 32px;
+  background: var(--primary);
+  border: 3px solid white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+} */
+
+.profile-image .image label {
   height: 32px;
   width: 32px;
   background: var(--primary);
@@ -362,7 +372,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 .editImageModal .action-btn {
   width: 100%;
   padding: 18px 16px;
-  background: #F5F5F5;
+  background: #f5f5f5;
   font-size: 14px;
   font-weight: 700;
   color: var(--primary-text);
@@ -484,13 +494,13 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 .user-payment .page-title a {
   height: 48px;
   width: 48px;
-  border: 1px solid #F2F2F2;
+  border: 1px solid #f2f2f2;
 }
 
 .user-payment .payment-container .icon {
   height: 48px;
   width: 48px;
-  border: 1px solid #F2F2F2;
+  border: 1px solid #f2f2f2;
 }
 
 .user-payment .checkmark {
@@ -578,7 +588,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 14: forgot-password CSS
 =============================================================*/
 .forgot-password blockquote {
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 
 .forgot-password blockquote p {
@@ -641,7 +651,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 /*===========================================================
 18: help-support CSS
 =============================================================*/
-.help-main .help-search .input-field{
+.help-main .help-search .input-field {
   padding: 0;
 }
 
@@ -679,11 +689,11 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 }
 
 .faq .accordion-button::after {
-  background-image: url('../svg/arrow-bottom.svg');
+  background-image: url("../svg/arrow-bottom.svg");
   background-size: cover;
 }
 
-.faq .accordion-item:last-of-type .accordion-button.collapsed{
+.faq .accordion-item:last-of-type .accordion-button.collapsed {
   border-radius: 0;
 }
 
@@ -753,7 +763,8 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 .dark-mode .add-address img,
 .dark-mode .user-payment .page-title a img,
 .dark-mode .logOutModal .close-btn img {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(322deg) brightness(102%) contrast(102%);
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%)
+    hue-rotate(322deg) brightness(102%) contrast(102%);
 }
 
 .dark-mode .user-info .input::placeholder,
@@ -776,7 +787,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   color: white;
 }
 
-.dark-mode .editImageModal .action-btn.delete{
+.dark-mode .editImageModal .action-btn.delete {
   color: var(--alert);
 }
 
@@ -786,7 +797,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 
 .dark-mode .faq .accordion-item,
 .dark-mode .faq .accordion-button,
-.dark-mode .custom-check-container{
+.dark-mode .custom-check-container {
   background: var(--gray-100);
 }
 

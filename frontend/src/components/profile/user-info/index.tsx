@@ -1,12 +1,12 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import BirthModal from "../../../modals/BirthModal";
+// import BirthModal from "../../../modals/BirthModal";
 
 const UserInfo = () => {
-  const [showBirthModal, setShowBirthModal] = useState(false);
-  const handleShowBirthModal = () => {
-    setShowBirthModal(!showBirthModal);
-  };
+  // const [showBirthModal, setShowBirthModal] = useState(false);
+  // const handleShowBirthModal = () => {
+  //   setShowBirthModal(!showBirthModal);
+  // };
 
   const navigate = useNavigate();
   const handleBack = () => {
@@ -34,14 +34,14 @@ const UserInfo = () => {
               alt="avatar"
               className="w-100 h-100 object-fit-cover img-fluid rounded-full"
             />
-            <button
-              type="button"
+            <label
+              htmlFor="fileUpload"
               className="d-flex align-items-center justify-content-center rounded-full"
-              data-bs-toggle="modal"
-              data-bs-target="#editImageModal"
             >
               <img src="/assets/svg/edit-white.svg" alt="icon" />
-            </button>
+            </label>
+
+            <input type="file" id="fileUpload" accept="image/*" hidden />
           </div>
         </section>
 
@@ -128,10 +128,10 @@ const UserInfo = () => {
         </div>
       </main>
 
-      <BirthModal
+      {/* <BirthModal
         showBirthModal={showBirthModal}
         handleShowBirthModal={handleShowBirthModal}
-      />
+      /> */}
     </>
   );
 };
