@@ -209,120 +209,83 @@ export default function Calendar() {
                   </button>
                 </div>
 
-                <div className="modal-body"></div>
+                <div className="modal-body">
+                  <div className="form-group">
+                    <label>제목</label>
+                    <input
+                      type="text"
+                      value={newEvent.title}
+                      onChange={(e) =>
+                        setNewEvent({
+                          ...newEvent,
+                          title: e.target.value,
+                        })
+                      }
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>시작일</label>
+                    <input
+                      type="date"
+                      value={newEvent.start}
+                      onChange={(e) =>
+                        setNewEvent({ ...newEvent, start: e.target.value })
+                      }
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>종료일</label>
+                    <input
+                      type="date"
+                      value={newEvent.end}
+                      onChange={(e) =>
+                        setNewEvent({ ...newEvent, end: e.target.value })
+                      }
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>상세내용</label>
+                    <textarea
+                      value={newEvent.description}
+                      onChange={(e) =>
+                        setNewEvent({
+                          ...newEvent,
+                          description: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>일정 색상</label>
+                    <div className="color-options">
+                      {colorOptions.map((c) => (
+                        <div
+                          key={c.value} // 현재 선택한 색상(newEvent.color)과 일치하면 'selected'클래스 추가
+                          className={`color-box ${
+                            newEvent.color === c.value ? "selected" : ""
+                          }`}
+                          style={{ backgroundColor: c.value }}
+                          // 클릭하면 newEvent 상태의 color 값을 해당 색으로 변경
+                          onClick={() =>
+                            setNewEvent({ ...newEvent, color: c.value })
+                          }
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="modal-footer">
+                  <button type="submit" className="btn-submit">
+                    추가
+                  </button>
+                </div>
               </form>
             </div>
           </div>
         )}
-
-        {/*
-        {showAddModal && (
-          <div
-            className={`modal fade serviceModal bottomModal modalBg ${
-              showAddModal ? "show" : ""
-            }`}
-            style={{ display: showAddModal ? "block" : "none" }}
-            id="serviceModal"
-            tabIndex={-1}
-            aria-hidden="true"
-          >
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <button
-                    onClick={() => setShowAddModal(false)}
-                    type="button"
-                    className="modal-close rounded-full"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <img src="/assets/svg/close-black.svg" alt="Close" />
-                  </button>
-                </div>
-                <div className="modal-body">
-                  <form onSubmit={handleAddEvent}>
-                    <div className="form-group">
-                      <label>제목</label>
-                      <input
-                        type="text"
-                        value={newEvent.title}
-                        onChange={(e) =>
-                          setNewEvent({ ...newEvent, title: e.target.value })
-                        }
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>시작일</label>
-                      <input
-                        type="date"
-                        value={newEvent.start}
-                        onChange={(e) =>
-                          setNewEvent({ ...newEvent, start: e.target.value })
-                        }
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>종료일</label>
-                      <input
-                        type="date"
-                        value={newEvent.end}
-                        onChange={(e) =>
-                          setNewEvent({ ...newEvent, end: e.target.value })
-                        }
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>색상 선택</label>
-                      <div className="color-options">
-                        {colorOptions.map((c) => (
-                          <div
-                            key={c.value}
-                            className={`color-box ${
-                              newEvent.color === c.value ? "selected" : ""
-                            }`}
-                            style={{ backgroundColor: c.value }}
-                            onClick={() =>
-                              setNewEvent({ ...newEvent, color: c.value })
-                            }
-                            title={c.name}
-                          >
-                            &nbsp;
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <label>상세내용</label>
-                      <textarea
-                        value={newEvent.description}
-                        onChange={(e) =>
-                          setNewEvent({
-                            ...newEvent,
-                            description: e.target.value,
-                          })
-                        }
-                      />
-                    </div>
-                    <div className="modal-actions">
-                      <button type="submit">등록</button>
-                      <button
-                        type="button"
-                        onClick={() => setShowAddModal(false)}
-                      >
-                        취소
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-        */}
-        {/*오류 구문 찾기*/}
       </main>
       <Footer />
     </>
