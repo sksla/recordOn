@@ -14,7 +14,7 @@ function MapListModal({ lists, onSelect, onAddList, onClose }: MapListModalProps
   const handleAdd = () => {
     if (!newListName.trim()) return;
     onAddList(newListName.trim());
-    onSelect(newListName.trim());
+    onSelect(newListName.trim()); // 새 리스트를 선택한 것으로 처리
     setNewListName("");
     onClose();
   };
@@ -29,7 +29,7 @@ function MapListModal({ lists, onSelect, onAddList, onClose }: MapListModalProps
               key={list}
               className="kakaomap-modal-list-item"
               onClick={() => {
-                onSelect(list);
+                onSelect(list); // 선택된 리스트를 부모 컴포넌트에 전달
                 onClose();
               }}
             >
