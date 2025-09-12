@@ -4,6 +4,7 @@ import {
   MapTypeControl,
   ZoomControl,
   MapMarker,
+  CustomOverlayMap, // CustomOverlay 컴포넌트 추가
 } from "react-kakao-maps-sdk";
 import HeaderOne from "../../../layouts/headers/HeaderOne";
 import Footer from "../../../layouts/footers/Footer";
@@ -91,12 +92,21 @@ function KakaoMap() {
 
   // 맵핀 리스트 이동 함수
   const handleMovePin = (id: string, newList: string) => {
+    // 1. `pins` 배열을 업데이트
     setPins(pins.map((p) => (p.id === id ? { ...p, list: newList } : p)));
+
+    // 2. 인포윈도우에 표시된 `selectedPin` 상태도 함께 업데이트
+    //    인포윈도우가 변경된 리스트 이름으로 다시 렌더링
+    setSelectedPin((prevPin) => {
+      if (prevPin && prevPin.id === id) {
+        return { ...prevPin, list: newList };
+      }
+      return prevPin;
+    });
   };
 
   // 마커 클릭 시 인포윈도우 띄우기 위해 선택된 핀 상태 저장 (토글 기능)
   const handleMarkerClick = (pin: MapPin) => {
-    // 이미 선택된 핀이라면 인포윈도우를 닫고, 그렇지 않으면 엽니다.
     if (selectedPin && selectedPin.id === pin.id) {
       setSelectedPin(null);
     } else {
@@ -150,6 +160,8 @@ function KakaoMap() {
                 lng: map.getCenter().getLng(),
               })
             }
+            // 지도의 빈 공간 클릭 시 인포윈도우 닫기
+            onClick={() => setSelectedPin(null)}
           >
             {/* 지도 타입 컨트롤, 줌 컨트롤 */}
             <MapTypeControl position={"TOPRIGHT"} />
@@ -161,17 +173,7 @@ function KakaoMap() {
                 position={searchPin.position}
                 clickable={true}
                 onClick={() => handleMarkerClick(searchPin)}
-              >
-                {/* selectedPin이 현재 검색 핀과 일치할 때만 인포윈도우 렌더링 */}
-                {selectedPin?.id === searchPin.id && (
-                  <InfoWindow
-                    pin={searchPin}
-                    onClose={handleCloseInfoWindow}
-                    isFavorited={isPinFavorited(searchPin)}
-                    onToggleFavorite={() => handleToggleFavorite(searchPin)}
-                  />
-                )}
-              </MapMarker>
+              />
             )}
 
             {/* 즐겨찾기 맵핀 리스트 렌더링 */}
@@ -181,7 +183,6 @@ function KakaoMap() {
                   selectedList === "지도보기" || pin.list === selectedList
               )
               .map((pin) => {
-                const isSelected = selectedPin?.id === pin.id;
                 return (
                   // 각 핀에 대한 마커
                   <MapMarker
@@ -189,19 +190,27 @@ function KakaoMap() {
                     position={pin.position}
                     clickable={true}
                     onClick={() => handleMarkerClick(pin)}
-                  >
-                    {/* selectedPin이 현재 즐겨찾기 핀과 일치할 때만 인포윈도우 렌더링 */}
-                    {isSelected && (
-                      <InfoWindow
-                        pin={pin}
-                        onClose={handleCloseInfoWindow}
-                        isFavorited={isPinFavorited(pin)}
-                        onToggleFavorite={() => handleToggleFavorite(pin)}
-                      />
-                    )}
-                  </MapMarker>
+                  />
                 );
               })}
+            
+            {/* CustomOverlay를 사용하여 인포윈도우를 직접 렌더링 */}
+            {selectedPin && (
+              <CustomOverlayMap
+                position={selectedPin.position}
+                // 기존의 HTML 문자열 방식 대신, React 컴포넌트를 사용
+              >
+                <InfoWindow
+                  pin={selectedPin}
+                  onClose={handleCloseInfoWindow}
+                  isFavorited={isPinFavorited(selectedPin)}
+                  onToggleFavorite={() => handleToggleFavorite(selectedPin)}
+                  availableLists={lists} // 사용 가능한 리스트 전달
+                  onRemove={handleRemovePin} // 삭제 함수 전달
+                  onMoveList={handleMovePin} // 리스트 변경 함수 전달
+                />
+              </CustomOverlayMap>
+            )}
           </Map>
         </div>
 

@@ -22,7 +22,7 @@ function MapListModal({ lists, onSelect, onAddList, onClose }: MapListModalProps
   return (
     <div className="kakaomap-modal-overlay">
       <div className="kakaomap-modal">
-        <h4 className="kakaomap-modal-title">맛집 리스트 선택</h4>
+        <h4 className="kakaomap-modal-title">나의 맵리스트</h4>
         <ul className="kakaomap-modal-list">
           {lists.map((list) => (
             <li
