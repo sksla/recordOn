@@ -14,7 +14,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 06: action CSS
 07: audio-call CSS
 08: dark-mode CSS
-09: edit-chat-area CSS
+09: chat-area-info CSS 김영주가 추가함
 
 ==================================================*/
 /*===========================================================
@@ -591,8 +591,9 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 }
 
 /*===========================================================
-09: edit-chat-area CSS
+09: chat-area-info CSS
 =============================================================*/
+
 .info-chat-room h4,
 .info-chat-room .input-label {
   display: block;
@@ -604,15 +605,32 @@ Author url: https://themeforest.net/user/website_stock/portfolio
 
 .info-chat-room .dob,
 .info-chat-room .input {
-  width: 100%;
+  width: 90%;
   border-radius: 24px;
-  height: 50px;
+  height: 43px;
   border: 1px solid var(--primary);
   padding: 0 16px;
   font-size: 16px;
   font-weight: 500;
   color: var(--primary-text);
   background: transparent;
+}
+
+.info-chat-room .input:disabled {
+  color: gray;
+}
+
+.info-chat-room .btn-primary {
+  display: block;
+  text-align: center;
+  padding: 16px 0;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--primary);
+  width: 30px;
+  height: 30px;
+  border-radius: 24px;
 }
 
 .info-chat-room .input::placeholder {
@@ -650,13 +668,35 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   left: 16px;
 }
 
+.bt-border {
+  padding-bottom: 15px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* 대화 상대 추가 관련 css */
+.info-chat-room .add-chat-person {
+  cursor: pointer;
+}
+
+.info-chat-room .add-chat-person .friend-item .friend-info h4 {
+  color: var(--primary);
+}
+
+/* 대화 상대 목록 관련 css */
+.info-chat-room .friend-list {
+  max-height: 300px; /* 원하는 높이 지정 */
+  overflow-y: auto; /* 세로 스크롤 자동 생성 */
+  overflow-x: hidden; /* 가로 스크롤은 감추기 (필요시) */
+}
+
 .info-chat-room .friend-item .friend-info .image {
   width: 35px;
   height: 35px;
 }
 
 .info-chat-room .friend-item .friend-info {
-  padding: 16px 16px;
+  padding: 8px 8px;
   background: white;
 }
 
@@ -671,7 +711,7 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   font-size: 10px;
   font-weight: 500;
   color: var(--additional1);
-  padding-top: 4px;
+  padding-top: 0px;
 }
 /* 
 .info-chat-room .friend-info h5 {
@@ -761,4 +801,19 @@ profile-image .image .count-2 img:nth-child(1) {
   bottom: -10px; /* 아래쪽 살짝 겹치게 */
   right: -10px; /* 오른쪽 살짝 겹치게 */
   z-index: 1; /* 뒤쪽 이미지 */
+}
+
+.out-chat-room {
+  box-sizing: border-box;
+  margin-top: 13px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.out-chat-room h4 {
+  color: red;
+  margin-top: 13px;
+  margin-bottom: 15px;
 }

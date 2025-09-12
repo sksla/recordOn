@@ -38,7 +38,7 @@ import Language from "./components/profile/language";
 import KakaoMap from "./components/auth/map"; //map 경로 설정
 import TodoMain from "./components/auth/todo"; //todo 경로
 import Calendar from "./components/auth/calendar";
-import EditChatArea from "./components/chat/chat-area/edit-chat-area";
+import ChatAreaInfo from "./components/chat/chat-area/chat-area-info"; // 채팅방 정보 경로
 
 const router = createBrowserRouter([
   { path: "/", element: <MainHome /> },
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
   { path: "/todo", element: <TodoMain /> }, // todo 경로
   { path: "calendar", element: <Calendar /> }, // calendar 경로
 
-  { path: "/edit-chat-area", element: <EditChatArea /> }, // 채팅방 편집 페이지 경로
+  { path: "/chat-area-info", element: <ChatAreaInfo /> }, // 채팅방 편집 페이지 경로
 
   // { path: "*", element: <NotFound />, errorElement: <CustomError /> },
 ]);

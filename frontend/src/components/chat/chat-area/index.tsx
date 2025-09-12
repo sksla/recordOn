@@ -32,7 +32,7 @@ const ChatArea = () => {
             <div className="member-count">
               <p>2</p>
             </div>
-            <Link to="/edit-chat-area">
+            <Link to="/chat-area-info">
               <img src="/assets/svg/more.svg" alt="arrow" />
             </Link>
             {/* <button
