@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Place } from "../../../types/map";
 
 declare global {
   interface Window {
@@ -8,13 +9,13 @@ declare global {
 
 type MapSearchProps = {
   mapObj: any;
-  onSelectPlace: (place: any) => void;
+  onSelectPlace: (place: Place) => void;
 };
 
 function MapSearch({ mapObj, onSelectPlace }: MapSearchProps) {
-  const [keyword, setKeyword] = useState("");
-  const [places, setPlaces] = useState<any[]>([]);
-  const [showList, setShowList] = useState(false);
+  const [keyword, setKeyword] = useState<string>("");
+  const [places, setPlaces] = useState<Place[]>([]);
+  const [showList, setShowList] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -42,7 +43,7 @@ function MapSearch({ mapObj, onSelectPlace }: MapSearchProps) {
           .map((place: any) => {
             const distance = Math.sqrt(
               Math.pow(parseFloat(place.y) - centerLat, 2) +
-              Math.pow(parseFloat(place.x) - centerLng, 2)
+                Math.pow(parseFloat(place.x) - centerLng, 2)
             );
             return { ...place, distance };
           })
@@ -60,7 +61,7 @@ function MapSearch({ mapObj, onSelectPlace }: MapSearchProps) {
     });
   };
 
-  const handleSelect = (place: any) => {
+  const handleSelect = (place: Place) => {
     onSelectPlace(place);
     setShowList(false);
   };
@@ -83,7 +84,11 @@ function MapSearch({ mapObj, onSelectPlace }: MapSearchProps) {
         <div className="kakaomap-dropdown">
           <ul className="kakaomap-list">
             {places.map((place) => (
-              <li key={place.id} onClick={() => handleSelect(place)} className="kakaomap-list-item">
+              <li
+                key={place.id}
+                onClick={() => handleSelect(place)}
+                className="kakaomap-list-item"
+              >
                 <span className="kakaomap-place-name">{place.place_name}</span>
                 <br />
                 <span className="kakaomap-address">{place.address_name}</span>
