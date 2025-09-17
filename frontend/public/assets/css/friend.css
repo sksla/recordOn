@@ -1,0 +1,61 @@
+/* =======================================
+[ Table of Contents ]
+
+01: friend-list CSS
+02: chat CSS
+
+
+
+=============================================== */
+
+/*===========================================================
+01: friend-list CSS
+=============================================================*/
+
+.page-title .more img {
+  width: 24px;
+  height: 24px;
+}
+
+.list-count h4 {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-70);
+}
+
+.friend-main .friend-search .input-field {
+  padding: 0;
+}
+
+/* 친구 목록 관련 css */
+.friend-list {
+  max-height: 630px; /* 원하는 높이 지정 */
+  overflow-y: auto; /* 세로 스크롤 자동 생성 */
+  overflow-x: hidden; /* 가로 스크롤은 감추기 (필요시) */
+}
+
+.friend-list .friend-item .friend-info .image {
+  width: 35px;
+  height: 35px;
+}
+
+.friend-list .friend-item .friend-info {
+  padding: 8px 8px;
+  background: white;
+}
+
+.friend-list .friend-item .friend-info h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 3px;
+  color: var(--primary-text);
+}
+
+.friend-list .friend-item .friend-info p {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--additional1);
+  padding-top: 0px;
+}

@@ -94,7 +94,7 @@ const UserProfile = () => {
             <ul className="setting-list">
               <li>
                 <Link
-                  to="/user-address"
+                  to="/friend-list"
                   className="d-flex align-items-center justify-content-between"
                 >
                   <div className="d-flex align-items-center gap-12 shrink-0">
@@ -105,6 +105,25 @@ const UserProfile = () => {
                       height="24px"
                     />
                     <p>친구</p>
+                  </div>
+
+                  <img src="/assets/svg/chevron-right.svg" alt="Icon" />
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/user-address"
+                  className="d-flex align-items-center justify-content-between"
+                >
+                  <div className="d-flex align-items-center gap-12 shrink-0">
+                    <img
+                      src="/assets/svg/user-alt-1.svg"
+                      alt="icon"
+                      width="24px"
+                      height="24px"
+                    />
+                    <p>친구 요청</p>
                   </div>
 
                   <img src="/assets/svg/chevron-right.svg" alt="Icon" />
