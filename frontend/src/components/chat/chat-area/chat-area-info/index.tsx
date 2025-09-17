@@ -1,4 +1,4 @@
-//import { useRef } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 //import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -8,6 +8,22 @@ const ChatAreaInfo = () => {
   const navigate = useNavigate();
   const handleBack = () => {
     navigate(-1); // -1 navigates back to the previous page
+  };
+
+  const [isEditing, setIsEditing] = useState(false);
+  const [value, setValue] = useState("example@recordon.com");
+
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
+
+  const handleCancel = () => {
+    setIsEditing(false);
+  };
+
+  const handleSave = () => {
+    // 서버 저장 로직이 들어갈 수 있음
+    setIsEditing(false);
   };
 
   // const fileInputRef = useRef(null);
@@ -67,7 +83,43 @@ const ChatAreaInfo = () => {
         <section className="info-chat-room px-24">
           <div className="mb-16 mt-24 bt-border">
             <h4 className="mb-16">채팅방명</h4>
-            <div className="mt-16 d-flex justify-content-between">
+            <div className="edit-before mt-16 d-flex justify-content-between">
+              <input
+                type="text"
+                className="input"
+                placeholder="First Name"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                disabled={!isEditing}
+              />
+              <div className="d-flex align-item-center gap-2">
+                {isEditing ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={handleSave}
+                      className="btn btn-primary"
+                    >
+                      저장
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleCancel}
+                      className="btn btn-secondary"
+                    >
+                      취소
+                    </button>
+                  </>
+                ) : (
+                  <button type="button" onClick={handleEdit}>
+                    <img src="/assets/svg/edit.svg" alt="edit icon" />
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {/* 모달 띄우는 버전 */}
+            {/* <div className="mt-16 d-flex justify-content-between">
               <input
                 type="text"
                 placeholder="First Name"
@@ -76,7 +128,7 @@ const ChatAreaInfo = () => {
                 disabled
               />
               <div className="d-flex align-item-center">
-                {/* 이 버튼 클릭하면 그냥 모달을 띄우자....*/}
+                
                 <button
                   type="button"
                   data-bs-toggle="modal"
@@ -85,7 +137,7 @@ const ChatAreaInfo = () => {
                   <img src="/assets/svg/edit.svg" alt="icon" />
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="mb-16 mt-16 bt-border">
