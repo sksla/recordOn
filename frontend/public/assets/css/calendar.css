@@ -262,12 +262,15 @@
   font-weight: 500;
 }
 .modal-overlay .form-group input,
-.modal-overlay .form-group textarea {
+.modal-overlay .form-group textarea,
+.modal-overlay .form-group select {
+  /* ✅ select 추가 */
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  background-color: white; /* select 배경색 흰색으로 명시 */
 }
 .modal-overlay .form-group textarea {
   min-height: 80px;
@@ -293,9 +296,9 @@
 
 /* 시작일/종료일처럼 한 줄에 여러 항목을 배치하기 위한 스타일 */
 .modal-overlay .form-row {
-  display: flex;         /* 자식 요소들을 가로로 배치 */
-  gap: 15px;             /* 항목 사이의 간격 */
-  align-items: center;   /* 세로 중앙 정렬 */
+  display: flex; /* 자식 요소들을 가로로 배치 */
+  gap: 15px; /* 항목 사이의 간격 */
+  align-items: center; /* 세로 중앙 정렬 */
 }
 
 /* form-row 안의 form-group은 너비를 동일하게 나눠가짐 */

@@ -38,8 +38,7 @@ export default function Calendar() {
   const [selectedDate, setSelectedDate] = useState<string | null>(null); // 선택한 날짜 저장(YYYY-MM-DD)
   const [showListModal, setShowListModal] = useState(false); // 일정 목록 표시 여부
   const [showAddModal, setShowAddModal] = useState(false); // 일정 추가 표시 여부
-  const [eventType, setEventType] = useState<'personal' | 'shared'>('personal'); // 개인일정 or 공유일정
-
+  const [eventType, setEventType] = useState<"personal" | "shared">("personal"); // 개인일정 or 공유일정
 
   // 일정 등록 임시 데이터
   const [newEvent, setNewEvent] = useState({
@@ -264,25 +263,29 @@ export default function Calendar() {
                   </div>
                   <div className="form-row">
                     <div className="form-group">
-                        <label>시작</label>
-                        <input
-                            type="time"
-                            value={newEvent.startTime}
-                            onChange={(e) => setNewEvent({...newEvent, endTime: e.target.value})}
-                            required
-                        />
+                      <label>시작</label>
+                      <input
+                        type="time"
+                        value={newEvent.startTime}
+                        onChange={(e) =>
+                          setNewEvent({ ...newEvent, endTime: e.target.value })
+                        }
+                        required
+                      />
                     </div>
                     <div className="form-group">
-                        <label>종료</label>
-                        <input
-                            type="time"
-                            value={newEvent.endTime}
-                            onChange={(e) => setNewEvent({...newEvent, endTime: e.target.value})}
-                            required
-                        />
+                      <label>종료</label>
+                      <input
+                        type="time"
+                        value={newEvent.endTime}
+                        onChange={(e) =>
+                          setNewEvent({ ...newEvent, endTime: e.target.value })
+                        }
+                        required
+                      />
                     </div>
                   </div>
-                  <br/>
+                  <br />
                   <div className="form-group">
                     <label>상세내용</label>
                     <textarea
@@ -297,47 +300,49 @@ export default function Calendar() {
                   </div>
 
                   <div className="form-group">
-                      <label>일정 구분</label>
-                      <div className="event-type-options">
-                          <label>
-                            <input
-                                type="radio"
-                                name="eventType"
-                                value="personal"
-                                checked={eventType === 'personal'}
-                                onChange={() => {
-                                  setEventType('personal');
-                                  setNewEvent({...newEvent, color: personalColorOptions[0].value});
-                                }}
-                            />
-                            개인일정
-                          </label>
-                          <label>
-                              <input
-                                  type="radio"
-                                  name="eventType"
-                                  value="shared"
-                                  checked={eventType === 'shared'}
-                                  onChange={() => {
-                                    setEventType('shared')
-                                    setNewEvent({...newEvent, color: sharedColorOptions[0].value});
-                                  }}
-                              />
-                              공유일정
-                          </label>
-                      </div>
+                    <label>일정 구분</label>
+                    <select
+                      value={eventType}
+                      onChange={(e) => {
+                        const newType = e.target.value as "personal" | "shared";
+                        setEventType(newType);
+
+                        // 구분을 변경할 때마다 해당 팔레트의 첫번째 색상을 기본값으로 설정
+                        if (newType === "personal") {
+                          setNewEvent({
+                            ...newEvent,
+                            color: personalColorOptions[0].value,
+                          });
+                        } else {
+                          setNewEvent({
+                            ...newEvent,
+                            color: sharedColorOptions[0].value,
+                          });
+                        }
+                      }}
+                    >
+                      <option value="personal">개인일정</option>
+                      <option value="shared">공유일정</option>
+                    </select>
                   </div>
 
                   <div className="form-group">
                     <label>일정 색상</label>
                     <div className="color-options">
-                      {(eventType === 'personal' ? personalColorOptions : sharedColorOptions).map((c) => (
-                          <div
-                              key={c.value}
-                              className={`color-box ${newEvent.color === c.value ? "selected" : ""}`}
-                              style={{backgroundColor: c.value}}
-                              onClick={() => setNewEvent({...newEvent, color: c.value})}
-                          />
+                      {(eventType === "personal"
+                        ? personalColorOptions
+                        : sharedColorOptions
+                      ).map((c) => (
+                        <div
+                          key={c.value}
+                          className={`color-box ${
+                            newEvent.color === c.value ? "selected" : ""
+                          }`}
+                          style={{ backgroundColor: c.value }}
+                          onClick={() =>
+                            setNewEvent({ ...newEvent, color: c.value })
+                          }
+                        />
                       ))}
                     </div>
                   </div>
