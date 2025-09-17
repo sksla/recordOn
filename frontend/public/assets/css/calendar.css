@@ -290,3 +290,16 @@
 .modal-overlay .color-box.selected {
   border-color: #0d6efd;
 }
+
+/* 시작일/종료일처럼 한 줄에 여러 항목을 배치하기 위한 스타일 */
+.modal-overlay .form-row {
+  display: flex;         /* 자식 요소들을 가로로 배치 */
+  gap: 15px;             /* 항목 사이의 간격 */
+  align-items: center;   /* 세로 중앙 정렬 */
+}
+
+/* form-row 안의 form-group은 너비를 동일하게 나눠가짐 */
+.modal-overlay .form-row .form-group {
+  flex: 1; /* 사용 가능한 공간을 똑같이 나눠가짐 */
+  margin-bottom: 0; /* form-row가 간격을 관리하므로 여기선 제거 */
+}
