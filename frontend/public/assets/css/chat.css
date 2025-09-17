@@ -620,19 +620,6 @@ Author url: https://themeforest.net/user/website_stock/portfolio
   color: gray;
 }
 
-.info-chat-room .btn-primary {
-  display: block;
-  text-align: center;
-  padding: 16px 0;
-  color: white;
-  font-size: 10px;
-  font-weight: 600;
-  background: var(--primary);
-  width: 30px;
-  height: 30px;
-  border-radius: 24px;
-}
-
 .info-chat-room .input::placeholder {
   font-size: 16px;
   font-weight: 500;
